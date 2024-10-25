@@ -16,6 +16,7 @@ function preload() {
 
 function setup() {
     let screen = createCanvas(800,450);
+    screen.position(0,0);
 
     background("indigo");
 
@@ -44,7 +45,6 @@ function createField(width, height) {
     for(let x = 0; x < width; x++) {
         if(x === 0) {
             pixels[x] = [];
-            console.log(pixels);
         }else {
             let row = [];
             pixels.push(row);
@@ -60,7 +60,7 @@ function createField(width, height) {
     
     for(let i = 0; i < pixels.length; i++) {
         for(let j = 0; j < pixels[i].length; j++) {           
-            pixels[i][j].opacity = shade_engine(pixels[i][j].x, pixels[i][j].y, width/2, height/2, 200);
+            pixels[i][j].opacity = shade_engine(pixels[i][j].x, pixels[i][j].y, width/2, height/2, 300);
         }
     }
 }
